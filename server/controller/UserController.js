@@ -40,8 +40,8 @@ async function deleteUser(req,res){
     })
 }
 
-function getAllUsers(req, res) {
-    User.find().exec((err,users)=>{
+async function getAllUsers(req, res) {
+    await User.find().exec((err,users)=>{
         if(err){
             res.json({message:err.message});
         }else{
